@@ -6,4 +6,34 @@
  :itonami.blueprint/governor :market-entry-compliance-governor
  :itonami.blueprint/robotics false
  :itonami.blueprint/required-technologies [:identity :forms :dmn :bpmn :audit-ledger]
- :itonami.blueprint/status :public-oss}
+ :itonami.blueprint/status :public-oss
+ :itonami.blueprint/maturity :implemented
+ :itonami.blueprint/implemented-slice
+ "MarketEntry-LLM Advisor ⊣ Market-Entry Compliance Governor, a REAL
+ compiled `kotoba-lang/langgraph` StateGraph (`:intake -> :advise ->
+ :govern -> :decide -+-> :commit / :request-approval -> :commit /
+ :hold`), append-only audit ledger. Turkmenistan's own genuinely thin,
+ low-transparency public record supported only THREE independently-
+ grounded, differently-confidence-rated facts this iteration (Ministry
+ of Justice business registration -- moderate confidence; the 2014 Law
+ on Tenders public-procurement legal framework -- high confidence, the
+ strongest fact; State Tax Service hususy salgyt belgisi (HSB) tax
+ registration -- lower confidence, expat/freelancer tax-advisory blogs
+ only), so the governor is FIVE HARD violation functions (spec-basis,
+ evidence-incomplete over the three-item checklist, engagement-fee
+ recompute, double-draft guard, double-submit guard) -- below every
+ other sibling actor built so far in this fleet (AGO=7, LBY/GNB/SDN=6)
+ -- deliberately with NO additional flagship conditional check, because
+ none of the three facts is specific enough to support one without
+ fabricating implied institutional detail (no dedicated procurement
+ regulator, no e-procurement portal, no FDI-screening body, no precise
+ tax-authority name were independently verified). `:filing/draft` and
+ `:filing/submit` (real portal actuation) never auto-commit in any
+ phase; `interrupt-before #{:request-approval}` pauses escalated
+ requests for real human sign-off via a checkpointer, and BOTH
+ `:commit` and `:hold` durably append to the real audit ledger
+ (`store/append-ledger!`). Store has a `MemStore` and a `DatomicStore`
+ (via `kotoba-lang/langchain-store`, no hand-rolled EDN-blob codec),
+ proven equivalent by a shared store-contract test. A smaller, honest
+ check count for this jurisdiction is a deliberate design choice, not
+ a shortcut -- see README 'Why fewer checks'."}
