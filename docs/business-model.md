@@ -10,7 +10,7 @@ scoped to a genuinely thin, low-transparency public record.
   procurement legal framework (high confidence -- the strongest fact),
   and State Tax Service *hususy salgyt belgisi* (HSB) tax registration
   (lower confidence, expat/freelancer tax-advisory blogs only). See
-  `src/marketentry/facts.cljc` for the full sourcing discussion and the
+  `src/marketentry/facts.cljk` for the full sourcing discussion and the
   explicit list of claims this iteration deliberately did NOT make
   (no named e-procurement portal, no FDI-screening body, no dedicated
   procurement regulator, no WTO accession documentation -- Turkmenistan
