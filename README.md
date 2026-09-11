@@ -7,7 +7,7 @@
 append-only audit ledger.
 
 ```
-clojure -M:dev:test
+kbb -M:dev:test
 ```
 
 ## The actor's 3 checks
