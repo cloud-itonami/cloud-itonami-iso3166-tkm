@@ -18,7 +18,7 @@
   ground-truth field to peek at (TKM's fact base does not support one,
   see `marketentry.facts`/`marketentry.governor`), so confidence
   depends only on whether the engagement is on file."
-  (:require #?(:clj  [clojure.edn :as edn]
+  (:require #?(:clj  [kotoba.lang.edn :as edn]
                :cljs [cljs.reader :as edn])
             [kotoba.lang.text :as str]
             [marketentry.facts :as facts]
