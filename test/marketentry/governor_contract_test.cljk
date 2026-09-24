@@ -16,7 +16,7 @@
   citation, evidence-checklist completeness, engagement-fee-mismatch,
   the double-actuation guards, and human-gated actuation -- is tested
   below exactly as faithfully as any richer sibling actor's suite."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [langgraph.graph :as g]
             [marketentry.store :as store]
             [marketentry.operation :as op]))
